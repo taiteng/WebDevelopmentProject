@@ -12,7 +12,7 @@
             a    {text-decoration: none;}
             label{color: white;}
         </style>
-        <title>Sign Up</title>
+        <title>Login</title>
     </head>
     <body>
         <header>
@@ -45,9 +45,9 @@
             </nav>
         </header>
         <div style="margin-top:75px" style="width:100%">
-            <h1 align="center">Sign Up</h1>
+            <h1 align="center">Login</h1>
             <div style="align-items: center; justify-content: center; display: flex;">
-                <form action="../Back_End/user_signup.php" method="POST">
+                <form action="../Back_End/user_login.php" method='POST'>
                     <div class="mb-3 mt-3">
                         <label for="username" class="form-label">Username:</label>
                         <input type="email" class="form-control" id="username" placeholder="Enter email" name="userName" required>
@@ -56,14 +56,14 @@
                         <label for="pwd" class="form-label">Password:</label>
                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="nname" class="form-label">Nickname:</label>
-                        <input type="text" class="form-control" id="nname" placeholder="Enter nickname" name="nickName" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </form>
             </div>
             <br>
+            <p style="text-align:center">
+                <a href="forgotpassword.php">Forgot password?</a><br>
+                <a href="signup.php">Don't have an account yet? Sign up for free!</a>
+            </p>
             <div style="align-items: center; justify-content: center; display: flex;">
                 <br><br>
                 <p>
@@ -74,4 +74,6 @@
             </div>
         </div>
     </body>
+    <?php
+    ?>
 </html>

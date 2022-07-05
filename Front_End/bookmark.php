@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+include("../Back_End/db_conn.php");
+include("../Back_End/functions.php");
+
+$user_data = check_login($conn);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,12 +46,15 @@
                                 <a class="nav-link" href="bookmark.php" style="font-size: 20px;">Bookmark</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="contact.php" style="font-size: 20px;">Contact</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="text" placeholder="Search" required>
-                            <button class="btn btn-primary" type="submit">Search</button>
+                        <form class="d-flex" name="search">
+                            <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
+                            <button class="btn btn-primary" type="submit" onclick="">Search</button>
                         </form>
                     </div>
                 </div>
@@ -58,52 +71,70 @@
                     <th>Duration</th>
                     <th>More Like This</th>
                 </tr>
-                <tr align="left">
-                    <td>Fantastic Beasts: The Secrets of Dumbledore</td>
-                    <td>14/04/2022</td>
-                    <td>Movie</td>
-                    <td>Fantasy</td>
-                    <td>142 min</td>
-                    <td>
-                        <table>
-                            <tr align="center">
-                                <td>
-                                    <img src="../Images/doctorStrange.jpg" width="130px" height="200px" alt="doctorStrange"/>
-                                    <p>Doctor Strange: Multiverse of Madness</p>
-                                    <button class="btn btn-success" type="button" onclick="location.href='preview.php'">Click Me</button>
-                                </td>
-                                <td>
-                                    <img src="../Images/assassinCreed.jpg" width="130px" height="200px" alt="assassinCreed"/>
-                                    <p>Assassin's Creed</p>
-                                    <button class="btn btn-success" type="button" onclick="location.href='preview.php'">Click Me</button>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr align="left">
-                    <td>Spy X Family</td>
-                    <td>09/04/2022</td>
-                    <td>Show</td>
-                    <td>Anime</td>
-                    <td>12 ep</td>
-                    <td>
-                        <table>
-                            <tr align="center">
-                                <td>
-                                    <img src="../Images/jujutsuKaisen.jpg" width="130px" height="200px" alt="jujutsuKaisen"/>
-                                    <p>Jujutsu Kaisen</p>
-                                    <button class="btn btn-success" type="button" onclick="location.href='preview.php'">Click Me</button>
-                                </td>
-                                <td>
-                                    <img src="../Images/1PM.jpg" width="130px" height="200px" alt="1PM"/>
-                                    <p>One Punch Man</p>
-                                    <button class="btn btn-success" type="button" onclick="location.href='preview.php'">Click Me</button>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
+                <?php
+                $bookmarks = $user_data['bookmark_id'];
+                $bk_str = $bookmarks;
+                $bookmark_id = explode(',', $bk_str);
+                $sizeOfArray = sizeof($bookmark_id);
+                
+                for ($i = 1; $i < $sizeOfArray; $i++){
+                    $count = 0;
+                    
+                    $sql = "SELECT name, date, type, genre, time from movies where movie_id = '$bookmark_id[$i]'";
+                    $result = $conn->query($sql);
+
+                    $row = $result->fetch_assoc();
+                    
+                    $more = $row["genre"];
+                    
+                    $query = "SELECT name, img from movies where genre = '$more'";
+                    $results = $conn->query($query);
+                    
+                    $rows = $results->fetch_assoc();
+                    
+                    echo '<tr align="left">
+                            <td>'. $row["name"] .'</td>
+                            <td>'. $row["date"] .'</td>
+                            <td>'. $row["type"] .'</td>
+                            <td>'. $row["genre"] .'</td>
+                            <td>'. $row["time"] .'</td>
+                            <td>
+                                <table>
+                                    <tr align="center">';
+                    
+                    if ($results->num_rows > 0) {
+                        // output data of each row
+                        while($rows = $results->fetch_assoc()) {
+                            if($count == 2){
+                                break;
+                            }
+                            else{
+                                if($row['name'] == $rows["name"]){
+                                    continue;
+                                }
+                                else{
+                                    echo '<td>
+                                            <img src="'. $rows["img"].'" width="200px" height="300px" alt="movie" class="img-thumbnail"/>
+                                            <p>'. $rows["name"] . '</p>
+                                            <form action="../Back_End/movie_valid.php" method="POST">
+                                                <input type="hidden" name="movieName" value="'. $rows["name"] .'">
+                                                <button class="btn btn-info" type="submit">Details</button>
+                                            </form>
+                                          </td>';
+                                }
+                            }
+                            $count++;
+                        }
+                    } else {
+                        echo "Smtg went wrong!";
+                    }
+                    
+                    echo '</tr>
+                                </table>
+                            </td>
+                        </tr>';           
+                }
+                ?>
             </table>
         </div>
     </body>

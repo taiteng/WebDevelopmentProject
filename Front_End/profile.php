@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+include("../Back_End/db_conn.php");
+include("../Back_End/functions.php");
+
+$user_data = check_login($conn);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +22,7 @@
             a    {text-decoration: none;}
             label{color: white;}
         </style>
-        <title>Login</title>
+        <title>Profile</title>
     </head>
     <body>
         <header>
@@ -30,45 +40,27 @@
                                 <a class="nav-link" href="bookmark.php" style="font-size: 20px;">Bookmark</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="contact.php" style="font-size: 20px;">Contact</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="text" placeholder="Search" required>
-                            <button class="btn btn-primary" type="submit">Search</button>
+                        <form class="d-flex" name="search">
+                            <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
+                            <button class="btn btn-primary" type="submit" onclick="">Search</button>
                         </form>
                     </div>
                 </div>
             </nav>
         </header>
         <div style="margin-top:75px" style="width:100%">
-            <h1 align="center">Login</h1>
-            <div style="align-items: center; justify-content: center; display: flex;">
-                <form action="/action_page.php">
-                    <div class="mb-3 mt-3">
-                        <label for="username" class="form-label">Username:</label>
-                        <input type="email" class="form-control" id="username" placeholder="Enter email" name="userName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="pwd" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-            </div>
+            <h1 align="center">Profile</h1>
             <br>
             <p style="text-align:center">
-                <a href="forgotpassword.php">Forgot password?</a><br>
-                <a href="signup.php">Don't have an account yet? Sign up for free!</a>
+                Howdy, <?php echo $user_data['nickname']; ?> <br><br>
+                <a href="../Back_End/user_logout.php">Logout</a><br>
             </p>
-            <div style="align-items: center; justify-content: center; display: flex;">
-                <br><br>
-                <p>
-                    Benefits of being a member: <br>
-                    ➳ Bookmark feature<br>
-                    ➳ Review feature
-                </p>
-            </div>
         </div>
     </body>
     <?php

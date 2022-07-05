@@ -30,12 +30,15 @@
                                 <a class="nav-link" href="bookmark.php" style="font-size: 20px;">Bookmark</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="contact.php" style="font-size: 20px;">Contact</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="text" placeholder="Search" required>
-                            <button class="btn btn-primary" type="submit">Search</button>
+                        <form class="d-flex" name="search">
+                            <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
+                            <button class="btn btn-primary" type="submit" onclick="">Search</button>
                         </form>
                     </div>
                 </div>
