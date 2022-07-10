@@ -48,7 +48,7 @@
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
                         </ul>
-                        <form class="d-flex" name="search">
+                        <form action="../Back_End/search.php" class="d-flex" name="search" method="POST">
                             <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
                             <button class="btn btn-primary" type="submit" onclick="">Search</button>
                         </form>
@@ -56,36 +56,38 @@
                 </div>
             </nav>
             <div style="margin-top:75px" style="width:100%">
-                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31775.935637974806!2d100.36723999894245!3d5.418190972443643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac45b64942a79%3A0x945563875197c7fe!2sTaman%20Riang!5e0!3m2!1sen!2smy!4v1656916366710!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                -->
                 <div class="container contact-form">
                     <h1>Contact form</h1>
                     <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <address>W-343 Coseis Meits UT</address>
-                            <p>Email:- test@email.com</p>
-                            <p>Phone:- 34563463434</p>
+                    <form action="../Back_End/contact_valid.php" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31775.935637974806!2d100.36723999894245!3d5.418190972443643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac45b64942a79%3A0x945563875197c7fe!2sTaman%20Riang!5e0!3m2!1sen!2smy!4v1656916366710!5m2!1sen!2smy" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <address>7388, Penang</address>
+                                <p>Email:- taitengchan@gmail.com</p>
+                                <p>Phone:- 0143096966</p>
+                                <p>Location:- C&S Studio</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" name="userName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="userEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea class="form-control" rows="7" name="message" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                    <button class="btn btn-primary btn-block" type="submit">Send</button>
+                                </div>
+                           </div>                      
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Massage</label>
-                                <textarea  class="form-control" rows="7"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <br>
-                                <button class="btn btn-primary btn-block">Send</button>
-                            </div>
-                       </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </header>

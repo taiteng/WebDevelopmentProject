@@ -46,9 +46,9 @@ $user_data = check_login($conn);
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
                         </ul>
-                        <form class="d-flex" name="search">
+                        <form action="../Back_End/search.php" class="d-flex" name="search" method="POST">
                             <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
-                            <button class="btn btn-primary" type="submit" onclick="">Search</button>
+                            <button class="btn btn-primary" type="submit">Search</button>
                         </form>
                     </div>
                 </div>

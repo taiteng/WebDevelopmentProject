@@ -66,9 +66,9 @@ $movie_data = check_movie($conn);
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
                         </ul>
-                        <form class="d-flex" name="search">
+                        <form action="../Back_End/search.php" class="d-flex" name="search" method="POST">
                             <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
-                            <button class="btn btn-primary" type="submit" onclick="">Search</button>
+                            <button class="btn btn-primary" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ $movie_data = check_movie($conn);
             <h1><?php echo $movie_data['name']; ?></h1>
             <img src="<?php echo $movie_data['img']; ?>" alt="image" style="width:600px;height:800px;"/>
             <p>
-                Movie Description: <?php echo $movie_data['desc']; ?><br>
+                Movie Description: <?php echo $movie_data['_desc']; ?><br>
                 <br><br>
                 Date Released: <?php echo $movie_data['date']; ?><br>
                 <br><br>

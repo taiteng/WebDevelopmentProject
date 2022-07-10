@@ -6,10 +6,10 @@ include("db_conn.php");
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-	//something was posted
-	$movie = $_POST['movieName'];
-
-	if(!empty($movie))
+    //something was posted
+    $movie = $_POST['movieName'];
+    
+    if(!empty($movie))
 	{
             //read from database
             $query = "select * from movies where name = '$movie'";

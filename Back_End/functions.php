@@ -1,8 +1,16 @@
 <?php
 
+function check_admin($user_data, $adminName){
+    if($user_data['username'] == $adminName){
+        header("Location: ../Admin/menu.php");
+        die;
+    }
+}
+
 function check_login($conn)
 {
-
+    $adminName = 'admin@admin.com';
+    
     if(isset($_SESSION['id']))
     {
 
@@ -12,8 +20,10 @@ function check_login($conn)
 	$result = mysqli_query($conn,$query);
 	if($result && mysqli_num_rows($result) > 0)
 	{
-
             $user_data = mysqli_fetch_assoc($result);
+            
+            check_admin($user_data, $adminName);
+            
             return $user_data;
 	}
         header("Location: ../Front_End/profile.php");
