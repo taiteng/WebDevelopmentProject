@@ -67,7 +67,7 @@ $movie_data = check_movie($conn);
             </div>
             <div class="mb-3 mt-3">
                 <label class="form-label">Description:</label>
-                <input type="text" class="form-control" value="<?php echo $movie_data['_desc']; ?>" name="description" required>
+                <input type="text" class="form-control" value="<?php echo $movie_data['descc']; ?>" name="description" required>
             </div>
             <div class="mb-3 mt-3">
                 <label class="form-label">Category:</label>
@@ -75,7 +75,7 @@ $movie_data = check_movie($conn);
             </div>
             <div class="mb-3 mt-3">
                 <label class="form-label">Date:</label>
-                <input type="text" class="form-control" value="<?php echo $movie_data['date']; ?>" name="date" required>
+                <input type="text" class="form-control" value="<?php echo $movie_data['datee']; ?>" name="date" required>
             </div>
             <div class="mb-3 mt-3">
                 <label class="form-label">Type:</label>
@@ -87,7 +87,7 @@ $movie_data = check_movie($conn);
             </div>
             <div class="mb-3 mt-3">
                 <label class="form-label">Time:</label>
-                <input type="text" class="form-control" value="<?php echo $movie_data['time']; ?>" name="time" required>
+                <input type="text" class="form-control" value="<?php echo $movie_data['timee']; ?>" name="time" required>
             </div>
             <div class="mb-3 mt-3">
                 <label class="form-label">Image URL:</label>

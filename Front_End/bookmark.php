@@ -94,10 +94,10 @@ $user_data = check_login($conn);
                     
                     echo '<tr align="left">
                             <td>'. $row["name"] .'</td>
-                            <td>'. $row["date"] .'</td>
+                            <td>'. $row["datee"] .'</td>
                             <td>'. $row["type"] .'</td>
                             <td>'. $row["genre"] .'</td>
-                            <td>'. $row["time"] .'</td>
+                            <td>'. $row["timee"] .'</td>
                             <td>
                                 <table>
                                     <tr align="center">';

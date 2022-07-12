@@ -3,6 +3,7 @@ session_start();
 
 include("../Back_End/db_conn.php");
 include("../Back_End/functions.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -141,86 +142,32 @@ include("../Back_End/functions.php");
         </div>
         <h1>Trending</h1>
         <div style="overflow-x:auto;">
-            <table class="table-borderless table-responsive" style="min-height: 450px;">
-                <tr align='center'>
-                    <?php
-                    $category1 = 'trend';
-                    $sql1 = "SELECT name, img from movies where category = '$category1'";
-                    $result1 = $conn->query($sql1);
-
-                    if ($result1->num_rows > 0) {
-                      // output data of each row
-                      while($row = $result1->fetch_assoc()) {
-                        echo '<td>
-                                  <img src="'. $row["img"].'" width="200px" height="300px" alt="movie" class="img-thumbnail"/>
-                                  <p>'. $row["name"] . '</p>
-                                  <form action="../Back_End/movie_valid.php" method="POST">
-                                      <input type="hidden" name="movieName" value="'. $row["name"] .'">
-                                      <button class="btn btn-info" type="submit">Click Me</button>
-                                  </form>
-                              </td>';
-                      }
-                    } else {
-                      echo "Smtg went wrong!";
-                    }
-                    ?>
+            <table class="table table-borderless table-responsive" style="min-height: 450px;">
+                <tr class="trendbody" align='center'>
+                    
                 </tr>
             </table>
         </div>
         <h1>Top 10 Movies</h1>
         <div style="overflow-x:auto;">
-            <table class="table-borderless table-responsive" style="min-height: 450px;">
-                <tr align='center'>
-                    <?php
-                    $category2 = 'top';
-                    $sql2 = "SELECT name, img from movies where category = '$category2'";
-                    $result2 = $conn->query($sql2);
-
-                    if ($result2->num_rows > 0) {
-                      // output data of each row
-                      while($row = $result2->fetch_assoc()) {
-                        echo '<td>
-                                  <img src="'. $row["img"].'" width="200px" height="300px" alt="movie" class="img-thumbnail"/>
-                                  <p>'. $row["name"] . '</p>
-                                  <form action="../Back_End/movie_valid.php" method="POST">
-                                      <input type="hidden" name="movieName" value="'. $row["name"] .'">
-                                      <button class="btn btn-info" type="submit">Click Me</button>
-                                  </form>
-                              </td>';
-                      }
-                    } else {
-                      echo "Smtg went wrong!";
-                    }
-                    ?>
+            <table class="toptable table-borderless table-responsive" style="min-height: 450px;">
+                <tr class="topbody" align='center'>
+                    
                 </tr>
             </table>
         </div>
         <h1>All Movies </h1>
         <div style="overflow-x:auto;">
-            <table class="table-borderless table-responsive" style="min-height: 450px;">
-                <tr align='center'>
-                    <?php
-                    $sql3 = "SELECT name, img from movies";
-                    $result3 = $conn->query($sql3);
-
-                    if ($result3->num_rows > 0) {
-                      // output data of each row
-                      while($row = $result3->fetch_assoc()) {
-                        echo '<td>
-                                  <img src="'. $row["img"].'" width="200px" height="300px" alt="movie" class="img-thumbnail"/>
-                                  <p>'. $row["name"] . '</p>
-                                  <form action="../Back_End/movie_valid.php" method="POST">
-                                      <input type="hidden" name="movieName" value="'. $row["name"] .'">
-                                      <button class="btn btn-info" type="submit">Click Me</button>
-                                  </form>
-                              </td>';
-                      }
-                    } else {
-                      echo "Smtg went wrong!";
-                    }
-                    ?>
+            <table class="alltable table-borderless table-responsive" style="min-height: 450px;">
+                <tr class="allbody" align='center'>
+                    
                 </tr>
             </table>
         </div>
+        
+        <!-- Script to call displays -->
+        <script src="display_trend.js"></script>
+        <script src="display_top.js"></script>
+        <script src="display_movie.js"></script>
     </body>
 </html>

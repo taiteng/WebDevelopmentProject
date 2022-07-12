@@ -78,9 +78,9 @@ $movie_data = check_movie($conn);
             <h1><?php echo $movie_data['name']; ?></h1>
             <img src="<?php echo $movie_data['img']; ?>" alt="image" style="width:600px;height:800px;"/>
             <p>
-                Movie Description: <?php echo $movie_data['_desc']; ?><br>
+                Movie Description: <?php echo $movie_data['descc']; ?><br>
                 <br><br>
-                Date Released: <?php echo $movie_data['date']; ?><br>
+                Date Released: <?php echo $movie_data['datee']; ?><br>
                 <br><br>
                 Type: <?php echo $movie_data['type']; ?><br>
                 <br><br>
@@ -89,7 +89,7 @@ $movie_data = check_movie($conn);
                 Time (Min): 
                     <?php 
                         $movie_type = "Movie";
-                        echo $movie_data['time']; 
+                        echo $movie_data['timee']; 
                         if($movie_data['type'] == $movie_type){
                             echo ' mins';
                         }

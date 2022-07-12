@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     if(!empty($movieID))
     {
 	//save to database
-        $sql = "UPDATE movies SET name='$name',_desc='$desc',category='$category',date='$date',type='$type',genre='$genre',time='$time',img='$img' WHERE movie_id = '$movieID'";
+        $sql = "UPDATE movies SET name='$name',descc='$desc',category='$category',datee='$date',type='$type',genre='$genre',timee='$time',img='$img' WHERE movie_id = '$movieID'";
 	mysqli_query($conn, $sql);
         
         header("Location: menu.php");

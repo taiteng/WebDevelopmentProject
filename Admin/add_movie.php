@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         echo '<script type="text/javascript">alert("Successfully insert!")</script>';
         
 	//save to database
-	$sql = "INSERT INTO movies (name,_desc,category,date,type,genre,img,time) VALUES ('$name','$desc','$category','$date','$type','$genre','$img','$time')";
+	$sql = "INSERT INTO movies (name,descc,category,datee,type,genre,img,timee) VALUES ('$name','$desc','$category','$date','$type','$genre','$img','$time')";
         
 	mysqli_query($conn, $sql);
 
