@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if($_SESSION["captcha"] == false){
+        echo '<script>alert("Please check Google reCAPTACHA");</script>';
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,6 +51,7 @@
                     </div>
                 </div>
             </nav>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         </header>
         <div style="margin-top:75px" style="width:100%">
             <h1 align="center">Sign Up</h1>
@@ -60,6 +69,10 @@
                         <label for="nname" class="form-label">Nickname:</label>
                         <input type="text" class="form-control" id="nname" placeholder="Enter nickname" name="nickName" required>
                     </div>
+                    <div class="g-recaptcha" 
+                        data-sitekey="6Lce4uogAAAAACy_Sveu3nhaYjxjK1wok_CwuL1X">
+                    </div>
+                    <br>
                     <button type="submit" class="btn btn-primary">Register</button>
                 </form>
             </div>

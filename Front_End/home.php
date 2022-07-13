@@ -4,6 +4,7 @@ session_start();
 include("../Back_End/db_conn.php");
 include("../Back_End/functions.php");
 
+$_SESSION["captcha"] = true;
 ?>
 
 <!DOCTYPE html>
