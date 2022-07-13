@@ -47,10 +47,10 @@ include("../Back_End/db_conn.php");
                                 <a class="nav-link" href="menu.php" style="font-size: 20px;">Menu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact_valid.php" style="font-size: 20px;">Contact</a>
+                                <a class="nav-link" href="contact_table.php" style="font-size: 20px;">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="users_valid.php" style="font-size: 20px;">Users</a>
+                                <a class="nav-link" href="user_table.php" style="font-size: 20px;">Users</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="admin_logout.php" style="font-size: 20px;">Logout</a>

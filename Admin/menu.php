@@ -81,48 +81,6 @@ include("../Back_End/db_conn.php");
                 <tbody class="tbody">
 						
 		</tbody>
-                <?php
-//                $sql = "SELECT * from movies";
-//                $result = $conn->query($sql);
-//                
-//                if ($result->num_rows > 0) {
-//                    // output data of each row
-//                    while($row = $result->fetch_assoc()) { 
-//                        $movie_type = 'Movie';
-//                        if($row['type'] == $movie_type){
-//                            $timeType = ' mins';
-//                        }
-//                        else{
-//                            $timeType = ' episodes';
-//                        }
-//                        
-//                        echo '<tr align="left">
-//                                <td>'. $row["name"] .'</td>
-//                                <td>'. $row["descc"] .'</td>
-//                                <td>'. $row["category"] .'</td>
-//                                <td>'. $row["datee"] .'</td>
-//                                <td>'. $row["type"] .'</td>
-//                                <td>'. $row["genre"] .'</td>
-//                                <td>'. $row["timee"] . $timeType .'</td>
-//                                <td>'. $row["img"] .'</td>
-//                                <td>
-//                                    <form action="edit_valid.php" method="POST">
-//                                        <input type="hidden" name="movieID" value="'. $row["movie_id"] .'">
-//                                        <button class="btn btn-info" type="submit">Edit</button>
-//                                    </form>
-//                                </td>
-//                                <td>
-//                                    <form action="delete_movie.php" method="POST">
-//                                        <input type="hidden" name="movieID" value="'. $row["movie_id"] .'">
-//                                        <button class="btn btn-info" type="submit">Delete</button>
-//                                    </form>
-//                                </td>
-//                              </tr>';
-//                      }
-//                    } else {
-//                      echo "Smtg went wrong!";
-//                    }
-                ?>
             </table>
         </div>
         <hr>
