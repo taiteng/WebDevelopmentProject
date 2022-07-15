@@ -172,4 +172,6 @@ class product{
 
         return $stmt;
     }
+    
+    //function edit(){}
 }
