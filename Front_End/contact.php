@@ -61,7 +61,7 @@
                     <hr>
                     <form action="../Back_End/contact_valid.php" method="POST">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="overflow-x:auto;">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31775.935637974806!2d100.36723999894245!3d5.418190972443643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac45b64942a79%3A0x945563875197c7fe!2sTaman%20Riang!5e0!3m2!1sen!2smy!4v1656916366710!5m2!1sen!2smy" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 <address>7388, Penang</address>
                                 <p>Email:- taitengchan@gmail.com</p>
