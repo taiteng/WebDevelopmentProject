@@ -80,7 +80,7 @@ $user_data = check_login($conn);
                 for ($i = 1; $i < $sizeOfArray; $i++){
                     $count = 0;
                     
-                    $sql = "SELECT name, date, type, genre, time from movies where movie_id = '$bookmark_id[$i]'";
+                    $sql = "SELECT name, datee, type, genre, timee from movies where movie_id = '$bookmark_id[$i]'";
                     $result = $conn->query($sql);
 
                     $row = $result->fetch_assoc();
