@@ -43,6 +43,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="profile.php" style="font-size: 20px;">Profile</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin.php" style="font-size: 20px;">Admin</a>
+                            </li>
                         </ul>
                         <form action="../Back_End/search.php" class="d-flex" name="search" method="POST">
                             <input class="form-control me-2" type="text" placeholder="Search" name="Search" required>
